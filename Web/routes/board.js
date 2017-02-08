@@ -2,6 +2,8 @@
 
 게시판에 게시물을 등록/조회/삭제/수정합니다.
 */
+var express = require('express');
+var app = express();
 var DB = {}; // DB 클라이언트 모듈(mongoose 등)입니다.
 
 exports.run = function(Server){

@@ -93,8 +93,9 @@ a {
 	background-color: #323740;
 }
 
-#icon1 {
+#icon0,#icon1,#icon2,#icon3,#icon4,#icon5,#icon6,#icon7,#icon8,#icon9,#icon10,#icon11 {
 	margin-left:auto; margin-right:auto; display:inline-block; display:table;
+
 }
 
 .ui.image.header{
@@ -117,5 +118,21 @@ a {
 
 #tr04 {
 	margin-left:10px;
+}
+
+ #icon2,#icon5,#icon8,#icon11 {
+	margin-left:26px;
+}
+
+#icon_text2,#icon_text5 {
+	margin-left:18px;
+	margin-bottom:12px;
+}
+#icon_text0,#icon_text1,#icon_text3,#icon_text4,#icon_text6,#icon_text7,#icon_text9,#icon_text10 {
+	margin-bottom:12px;
+}
+#icon_text8,#icon_text11 {
+	margin-left:22px;
+	margin-bottom:12px;
 }
 

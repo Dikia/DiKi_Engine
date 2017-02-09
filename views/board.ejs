@@ -7,9 +7,8 @@
 		<link rel="stylesheet" href="../stylesheets/style.css">
 		<script src="../lib/semantic.min.js"></script>
 		<link rel="stylesheet" href="../lib/semantic.min.css">
-		<script>
 
-	
+		<script>
 			function new_submit(option){
 
 				var inWriter = $('.addWriter_').val();
@@ -24,13 +23,10 @@
 						alert('내용을 모두 입력해야 합니다.');
 						return
 				}else{
-						$('#writeAction').submit();
-				}
-
-				}
+						$('#writeAction').submit();}
+          }
 			}
 
-			
 			function new_cancel(option){
 
 				if(option == 'add'){
@@ -39,13 +35,10 @@
 
 						$(location).attr('href','/');
 					
-					}else if(selection==false){
-					
-						return;
-					}
+					}else if(selection==false){ return;
+					 }
 				}
 			}
-
 
 			function displayForm(){
 				$('#write_form').show();
@@ -53,11 +46,10 @@
 			}
 
 		</script>
+
 	</head>
 
-	<body class="ui center aligned container" id="board_body">
-
-    
+	<body class="ui center aligned container" id="board_body">  
       <div class="ui fixed inverted menu">
         
         <h1 id="board_header"><a class="ui inverted blue massive circular label" href="/board" ><b>D </b></a></h1>
@@ -69,11 +61,8 @@
           <div class="item" id="login_btn">
           <a href="#" ><h2><b>Sign up </b></h2></a>
         </div>
-        </div>    
-      </div>
-    
-
-
+      </div>    
+   </div>
 	<br/><br/><br/><br/>
 
 	<!--header-->
@@ -83,11 +72,7 @@
 
 	<div class="ui section divider"></div>
 
-
-
-
 	<!--Main menu-->
-
 
 	<div class="ui massive stackable grey inverted borderless menu" id="board_menu">
 
@@ -107,415 +92,65 @@
 
 	<!--Main menu-->
 
-
-	
-
 	<div class="ui divider"></div>
 
-	<!--first content-->
+	<!--first content left menu-->
 
 	<div class="ui grid">
-
-
 		<div class="ui four wide column" >
-	
 	<table class="ui very basic collapsing celled table" id="table_one">
-  
-  <tbody>
+    <tbody>
 
-    <tr>
-
-      <td>
-        <h4 class="ui image header">
-          <a href="#">
-         	 <i class="users big inverted blue icon" id="icon1"></i><br/>
-            	<div class="content">
-              		<b>Character</b>
-            	</div>
-         </a>
-    	</h4>
-  	  </td>
-
-      <td>
+        <% var icons = ['users','car','road','settings','television','home','tree','bomb','food','diamond','image','plus']; %>
+        <% var icon_words = ['Character','Vehicle','Exterior','Mechanic','Eletronic','Interior','Environment','Military','Food','Fashion','HDRI','more..'];%>
+        <% var icon_num = 0; %>
+        <% for(var i=0; i<4; i++){%>
+        <tr>
+         <% for(var j=0; j<3; j++){ %>
+        <td>
         <h4 class="ui image header" >
           <a href="#">
-           <i class="car big inverted blue icon" id="icon1"></i><br/>
-              <div class="content">
-                  <b>Vehicle</b>
-              </div>
-         </a>
-      </h4>
-      </td>
-
-  	  <td>
-        <h4 class="ui image header" id="tr04">
-          <a href="#">
-           <i class="road big inverted blue icon" id="icon1"></i><br/>
-              <div class="content">
-                  <b>Exteior</b>
-              </div>
-         </a>
-      </h4>
-      </td>
-
+           <i class="<%=icons[icon_num]%> big inverted blue icon" id="icon<%=icon_num%>" ></i><br/>
+              <div class="content" id="icon_text<%=icon_num%>">
+                  <b><%=icon_words[icon_num]%></b>
+              </div></a></h4></td>
+         <% icon_num++ %>
+       <%}%>
     </tr>
-
-    <tr>
-
-      <td>
-        <h4 class="ui image header"  id="tr01">
-          <a href="#">
-           <i class="settings big inverted blue icon" id="icon1"></i><br/>
-              <div class="content">
-                  <b>Mechanic</b>
-              </div>
-         </a>
-      </h4>
-      </td>
-
-      <td>
-        <h4 class="ui image header"  id="tr01">
-          <a href="#">
-           <i class="television big inverted blue icon" id="icon1"></i><br/>
-              <div class="content">
-                  <b>Eletronic</b>
-              </div>
-         </a>
-      </h4>
-      </td>
-
-  	  <td>
-        <h4 class="ui image header" id="tr03" >
-          <a href="#">
-           <i class="home big inverted blue icon" id="icon1"></i><br/>
-              <div class="content">
-                  <b>Interior</b>
-              </div>
-         </a>
-      </h4>
-      </td>
-
-    </tr>
-
-
-	<tr>
-      <td>
-        <h4 class="ui image header"  id="tr01">
-          <a href="#">
-           <i class="tree big inverted blue icon" id="icon1"></i><br/>
-              <div class="content">
-                  <b>Environment</b>
-              </div>
-         </a>
-      </h4>
-      </td>
-
-      <td>
-        <h4 class="ui image header"  id="tr01">
-          <a href="#">
-           <i class="bomb big inverted blue icon" id="icon1"></i><br/>
-              <div class="content">
-                  <b>Military</b>
-              </div>
-         </a>
-      </h4>
-      </td>
-
-  	  <td>
-        <h4 class="ui image header"  id="tr02">
-          <a href="#">
-           <i class="food big inverted blue icon" id="icon1"></i><br/>
-              <div class="content">
-                  <b>Food</b>
-              </div>
-         </a>
-      </h4>
-      </td>
-
-    </tr>
-
-
-      <tr>
-
-      <td>
-        <h4 class="ui image header"  id="tr01">
-          <a href="#">
-           <i class="diamond big inverted blue icon" id="icon1"></i><br/>
-              <div class="content">
-                  <b>fashion</b>
-              </div>
-         </a>
-      </h4>
-      </td>
-
-      <td>
-        <h4 class="ui image header"  id="tr01">
-          <a href="#">
-           <i class="image big inverted blue icon" id="icon1"></i><br/>
-              <div class="content">
-                  <b>HDRI</b>
-              </div>
-         </a>
-      </h4>
-      </td>
-
-  	  <td>
-        <h4 class="ui image header"  id="tr02">
-          <a href="#">
-           <i class="plus large inverted blue icon" id="icon1"></i><br/>
-              <div class="content">
-                  <b>more..</b>
-              </div>
-         </a>
-      </h4>
-      </td>
-  	  
-    </tr>
+    <%}%>
 
   </tbody>
 </table>
-
 </div>
+
+ <!--first content left menu End -->
+
+ <!--first content right menu start -->
 
 	  <div class="twelve wide column">
       <table class="ui very basic collapsing table" id="table_two">
         <tbody>
-
-          <tr> 
-
-            <td>
-              <div class="ui six doubling cards">
-
-                <div class="card">
-                  <div class="image" id="termi1">
-                    <img src="../images/test01.jpg">
-                    
-                    </div>
+          <% for(var k=0; k<3; k++){%>
+           <tr> <td> <div class="ui six doubling cards">
+                <% for(var l=0; l<6; l++){%>
+                    <div class="card">
+                      <div class="image" id="termi2">
+                        <img src="../images/test02.jpg">
+                     </div>
                     <div class="extra" id="ex6">
-                      
-                </div>
+                  </div>
               </div>
-
-              <div class="card">
-                  <div class="image" id="termi2">
-                    <img src="../images/test02.jpg">
-                    
-                    </div>
-                    <div class="extra" id="ex6">
-                      
-                </div>
-              </div>
-
-              <div class="card">
-                  <div class="image" id="termi3">
-                    <img src="../images/test03.jpg">
-                    
-                    </div>
-                    <div class="extra" id="ex6">
-                      
-                </div>
-              </div>
-
-
-                <div class="card">
-                  <div class="image" id="termi1">
-                    <img src="../images/test04.jpg">
-                    
-                    </div>
-                    <div class="extra" id="ex6">
-                      
-                     
-                </div>
-              </div>
-
-              <div class="card">
-                  <div class="image" id="termi2">
-                    <img src="../images/test05.jpg">
-                    
-                    </div>
-                    <div class="extra" id="ex6">
-                      
-                     
-                </div>
-              </div>
-
-              <div class="card">
-
-                  <div class="image" id="termi3">
-                    <img src="../images/test06.jpg">
-                    
-                    </div>
-                    <div class="extra" id="ex6">
-                      
-                     
-                </div>
-              </div>
-
+              <%}%>
             </div>
             </td>
-
           </tr>
-
-          <tr> 
-
-            <td>
-              <div class="ui six doubling cards">
-
-                <div class="card">
-                  <div class="image" id="termi1">
-                    <img src="../images/test07.gif">
-                    
-                    </div>
-                    <div class="extra" id="ex6">
-                      
-                </div>
-              </div>
-
-              <div class="card">
-                  <div class="image" id="termi2">
-                    <img src="../images/test08.jpg">
-                    
-                    </div>
-                    <div class="extra" id="ex6">
-                      
-                </div>
-              </div>
-
-              <div class="card">
-                  <div class="image" id="termi3">
-                    <img src="../images/test09.jpg">
-                    
-                    </div>
-                    <div class="extra" id="ex6">
-                      
-                </div>
-              </div>
-
-
-                <div class="card">
-                  <div class="image" id="termi1">
-                    <img src="../images/test10.jpg">
-                    
-                    </div>
-                    <div class="extra" id="ex6">
-                      
-                     
-                </div>
-              </div>
-
-              <div class="card">
-                  <div class="image" id="termi2">
-                    <img src="../images/test11.png">
-                    
-                    </div>
-                    <div class="extra" id="ex6">
-                      
-                     
-                </div>
-              </div>
-
-              <div class="card">
-
-                  <div class="image" id="termi3">
-                    <img src="../images/test12.jpg">
-                    
-                    </div>
-                    <div class="extra" id="ex6">
-                      
-                     
-                </div>
-              </div>
-
-            </div>
-            </td>
-
-          </tr>
-
-          <tr> 
-
-            <td>
-              <div class="ui doubling six cards">
-
-                <div class="ui card">
-                  <div class="image" id="termi1">
-                    <img src="../images/test13.jpg">
-                    
-                    </div>
-                    <div class="extra" id="ex6">
-                      
-                </div>
-              </div>
-
-              <div class="card">
-                  <div class="image" id="termi2">
-                    <img src="../images/test05.jpg">
-                    
-                    </div>
-                    <div class="extra" id="ex6">
-                      
-                </div>
-              </div>
-
-              <div class="card">
-                  <div class="image" id="termi3">
-                    <img src="../images/test08.jpg">
-                    
-                    </div>
-                    <div class="extra" id="ex6">
-                      
-                </div>
-              </div>
-
-
-                <div class="card">
-                  <div class="image" id="termi1">
-                    <img src="../images/test12.jpg">
-                    
-                    </div>
-                    <div class="extra" id="ex6">
-                      
-                     
-                </div>
-              </div>
-
-              <div class="card">
-                  <div class="image" id="termi2">
-                    <img src="../images/test11.png">
-                    
-                    </div>
-                    <div class="extra" id="ex6">
-                      
-                     
-                </div>
-              </div>
-
-              <div class="card">
-
-                  <div class="image" id="termi3">
-                    <img src="../images/test04.jpg">
-                    
-                    </div>
-                    <div class="extra" id="ex6">
-                      
-                     
-                </div>
-              </div>
-
-            </div>
-            </td>
-
-          </tr>
-
-
-        </tbody>
+          <%}%>
+          </tbody>
       </table>
-		
     </div>
 </div>
 
-
-
-	<!--first content End-->
+<!--first content right menu End -->
 
 	<div class="ui divider"></div>
 
@@ -528,14 +163,12 @@
 
 				<% i++; %>
 				<% content.forEach(function(item){ %>
-
 					<tr>
 						<td class="number"><%=i%></td>
 						<td class="title"><a href="/view?id=<%=item._id%>"><%=item.title%></a></td>
 						<td class="writer"><%=item.writer%></td>
 						<td class="date"><%=item.date%></td>
 						<td class="cnt"><%=item.count%></td>
-
 					</tr>
 				<% }) %>
 
@@ -545,11 +178,9 @@
 				</tr>
 			<% } %>
 		</table>
-
 			<a onclick="displayForm();">새글 작성</a>
 
 		</div>
-
 		<div id="write_form">
 			<form id="writeAction" action="/" method="post">
 
@@ -557,18 +188,13 @@
 				<input type="text" class="addTitle_" name="addTitle" placeholder="제목">
 				<input type="text" class="addPassword_" name="addPassword" placeholder="비밀번호">
 				<textarea class="addContent_" name="addContent" cols="80" rows="20"></textarea>
-
 			</form>
 			<div id="lower_grp">
-
 				<a onclick="new_submit('add');">확인</a>
 				<a onclick="new_cancel('add');">취소</a>
 
 			</div>
 		</div>
-
-
 	</div>
-
 	</body>
 </html>
